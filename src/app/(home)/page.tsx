@@ -24,8 +24,8 @@ export default async function Home() {
           quidem iste ipsum culpa nobis omnis.
         </p>
         <div className='flex gap-4'>
-          <Button>View my work</Button>
-          <Button>Contact me</Button>
+          <Button href='/portfolio'>View my work</Button>
+          <Button href='/contact'>Contact me</Button>
         </div>
       </div>
     </section>

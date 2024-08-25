@@ -25,7 +25,9 @@
       "@/providers": ["providers"],
       "@/styles/*": ["styles/*"],
       "@/lib/*": ["lib/*"],
-      "@/hooks": ["hooks"]
+      "@/hooks": ["hooks"],
+      "@/config": ["config"],
+      "#site/content": ["../.velite"]
     },
     "types": ["node", "@testing-library/jest-dom"]
   },

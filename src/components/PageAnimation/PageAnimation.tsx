@@ -10,8 +10,8 @@ export const PageAnimation = ({ children }: PageAnimationProps) => {
   return (
     <motion.div
       className='h-full'
-      initial={{ x: '-100vw' }}
-      animate={{ x: '0%' }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
       {children}

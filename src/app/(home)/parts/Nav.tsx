@@ -68,7 +68,7 @@ export const Nav = () => {
 
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText('test@test.com')
+      await navigator.clipboard.writeText(process.env.NEXT_PUBLIC_EMAIL)
 
       toast({
         title: 'Email copied to clipboard',

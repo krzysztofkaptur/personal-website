@@ -5,8 +5,6 @@ import { cn } from '@/lib/utils'
 
 import { TransitionProvider } from '@/providers'
 
-import { PageAnimation } from '@/components'
-
 import { Nav } from './(home)/parts'
 
 const primaryFont = Montserrat({
@@ -35,9 +33,7 @@ export default function RootLayout({
         <TransitionProvider>
           <Nav />
           <div className='mx-auto max-w-4xl flex-1 px-4 pt-20'>
-            <PageAnimation>
-              <main>{children}</main>
-            </PageAnimation>
+            <main>{children}</main>
           </div>
         </TransitionProvider>
       </body>

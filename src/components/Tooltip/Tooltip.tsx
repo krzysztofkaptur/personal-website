@@ -1,20 +1,24 @@
+import { PropsWithChildren } from 'react'
+
 import {
   Button,
-  Tooltip as UiTooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
+  Tooltip as UiTooltip,
 } from '@/ui'
 
-export const Tooltip = () => {
+type TooltipProps = PropsWithChildren<{
+  tip: string
+}>
+
+export const Tooltip = ({ tip, children }: TooltipProps) => {
   return (
     <TooltipProvider>
       <UiTooltip>
-        <TooltipTrigger asChild>
-          <Button variant='outline'>Hover</Button>
-        </TooltipTrigger>
+        <TooltipTrigger asChild>{children}</TooltipTrigger>
         <TooltipContent>
-          <p>Add to library</p>
+          <p>{tip}</p>
         </TooltipContent>
       </UiTooltip>
     </TooltipProvider>

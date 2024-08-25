@@ -6,7 +6,14 @@ import { useState } from 'react'
 import { motion } from '@/lib/animation'
 import { Github, Linkedin, Mail } from '@/lib/icons'
 
-import { Button, Logo, NavLink, NavToggle, TopMenu } from '@/components'
+import {
+  Button,
+  Logo,
+  NavLink,
+  NavToggle,
+  Tooltip,
+  TopMenu,
+} from '@/components'
 
 import { useToast } from '@/ui'
 
@@ -68,7 +75,7 @@ export const Nav = () => {
 
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText(process.env.NEXT_PUBLIC_EMAIL)
+      await navigator.clipboard.writeText(process.env.NEXT_PUBLIC_EMAIL!)
 
       toast({
         title: 'Email copied to clipboard',
@@ -91,9 +98,11 @@ export const Nav = () => {
         </Link>
       </div>
       <div className='hidden flex-1 items-center justify-end gap-4 lg:flex'>
-        <Button onClick={copyEmail}>
-          <Mail />
-        </Button>
+        <Tooltip tip='Copy email to clipboard'>
+          {/* <Button onClick={copyEmail}> */}
+          <Mail onClick={copyEmail} className='cursor-pointer text-red-600' />
+          {/* </Button> */}
+        </Tooltip>
         <Link href='https://github.com/krzysztofkaptur' target='_blank'>
           <Github />
         </Link>

@@ -5,6 +5,8 @@ import { cn } from '@/lib/utils'
 
 import { TransitionProvider } from '@/providers'
 
+import { Toaster } from '@/ui'
+
 import { Nav } from './(home)/parts'
 
 const primaryFont = Montserrat({
@@ -36,6 +38,7 @@ export default function RootLayout({
             <main>{children}</main>
           </div>
         </TransitionProvider>
+        <Toaster />
       </body>
     </html>
   )

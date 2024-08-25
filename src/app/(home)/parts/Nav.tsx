@@ -8,6 +8,8 @@ import { Github, Linkedin, Mail } from '@/lib/icons'
 
 import { Button, Logo, NavLink, NavToggle, TopMenu } from '@/components'
 
+import { useToast } from '@/ui'
+
 const links = [
   {
     url: '/',
@@ -62,6 +64,19 @@ const listItemVariants = {
 export const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
   const toggleNav = () => setIsOpen((prev) => !prev)
+  const { toast } = useToast()
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText('test@test.com')
+
+      toast({
+        title: 'Email copied to clipboard',
+      })
+    } catch (err) {
+      console.error('Failed to copy: ', err)
+    }
+  }
 
   return (
     <TopMenu className='absolute left-0 right-0 mx-auto w-full max-w-7xl'>
@@ -76,7 +91,7 @@ export const Nav = () => {
         </Link>
       </div>
       <div className='hidden flex-1 items-center justify-end gap-4 lg:flex'>
-        <Button>
+        <Button onClick={copyEmail}>
           <Mail />
         </Button>
         <Link href='https://github.com/krzysztofkaptur' target='_blank'>

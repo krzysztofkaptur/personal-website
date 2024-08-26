@@ -1,13 +1,16 @@
 import { Button, Text } from '@/components'
 
+import { AnimatedText } from '.'
+
 export const HomeContent = () => {
   return (
     <div className='flex flex-1 flex-col justify-center gap-6'>
       <header>
         <Text
           variant='h6'
-          className='text-xl font-semibold uppercase tracking-widest'
+          className='inline-block text-xl font-semibold uppercase'
         >
+          {/* <AnimatedText text='Hello!' className='bg-white p-2 text-black' /> */}
           Hello!
         </Text>
         <Text
@@ -15,12 +18,13 @@ export const HomeContent = () => {
           className='text-xl sm:text-3xl md:text-4xl lg:text-8xl'
         >
           I&apos;m <span className='font-medium'>Chris</span>,{' '}
-          <div className='whitespace-nowrap'>
-            <span className='inline-block bg-white p-4 text-black'>
-              Front-end
-            </span>{' '}
-            developer
+          <div className='flex gap-1 whitespace-nowrap'>
+            <AnimatedText
+              text='Front-end'
+              className='bg-white p-4 text-black'
+            />
           </div>
+          <span>developer</span>
         </Text>
       </header>
       <Text className='text-sm sm:text-base md:text-lg'>

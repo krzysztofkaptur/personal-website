@@ -42,7 +42,7 @@ const pages = [
   ,
   {
     url: '/side-projects',
-    label: 'Side projects',
+    label: 'Side-projects',
   },
   {
     url: '/blog',
@@ -61,7 +61,7 @@ export const TransitionProvider = ({ children }: TransitionProviderProps) => {
     <AnimatePresence mode='wait'>
       <div
         key={pathname}
-        className='flex min-h-screen flex-col bg-gradient-to-b from-gray-950 to-gray-800'
+        className='flex min-h-screen flex-col border-b border-solid border-gray-700 bg-gradient-to-b from-gray-950 to-gray-800'
       >
         <div className='pointer-events-none flex max-h-screen overflow-hidden'>
           {animationItems?.map((item, index) => (
@@ -74,13 +74,23 @@ export const TransitionProvider = ({ children }: TransitionProviderProps) => {
                 transition={{ duration: 0.6, ease: 'easeOut' }}
               />
               <motion.div
-                className='fixed bottom-0 left-0 right-0 top-0 z-50 m-auto h-fit w-fit -rotate-45 cursor-default text-8xl text-white'
+                className='fixed bottom-0 left-0 right-0 top-0 z-50 m-auto flex h-fit w-fit cursor-default gap-2 text-6xl tracking-widest text-white'
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
               >
-                {pages.find((page) => page?.url === pathname)?.label}
+                {pages
+                  .find((page) => page?.url === pathname)
+                  ?.label.split('')
+                  .map((letter, index) => (
+                    <span
+                      key={index}
+                      className='inline-block bg-white p-4 text-black'
+                    >
+                      {letter}
+                    </span>
+                  ))}
               </motion.div>
             </>
           ))}

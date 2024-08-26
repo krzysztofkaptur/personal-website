@@ -33,7 +33,7 @@ export default function RootLayout({
         )}
       >
         <TransitionProvider>
-          <div className='max-w-7xl'>
+          <div className='mx-auto w-full max-w-7xl'>
             <Nav />
           </div>
           <div className='mx-auto flex w-full max-w-7xl flex-1 gap-20 px-4'>
@@ -45,6 +45,11 @@ export default function RootLayout({
             </main>
           </div>
         </TransitionProvider>
+        <footer className='border-t-2 border-solid border-gray-900 bg-gradient-to-b from-gray-800 to-gray-900'>
+          <div className='mx-auto max-w-7xl p-4'>
+            <span>&copy; {new Date().getFullYear()}</span>
+          </div>
+        </footer>
         <Toaster />
       </body>
     </html>

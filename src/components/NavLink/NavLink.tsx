@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useMemo } from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -25,7 +24,7 @@ export const NavLink = ({ link, index, className }: NavLinkProps) => {
       href={link.url}
       className={cn(
         `relative whitespace-nowrap rounded text-4xl uppercase`,
-        pathname === link.url && 'text-6xl text-red-500',
+        pathname === link.url && 'text-6xl text-red-500 line-through',
         className
       )}
     >

@@ -69,9 +69,9 @@ export const Nav = () => {
           variants={listVariants}
           initial='closed'
           animate='opened'
-          className='absolute left-0 top-0 z-20 flex h-screen w-screen items-center justify-center bg-black text-xl text-white'
+          className='fixed left-0 top-0 z-20 flex h-screen w-screen items-center justify-center bg-black text-xl text-white'
         >
-          <div className='flex w-full max-w-7xl justify-between'>
+          <div className='flex w-full max-w-7xl justify-between px-4'>
             <Socials />
             <div className='flex flex-col gap-10 text-right'>
               {links.map((link, index) => (

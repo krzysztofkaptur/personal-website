@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { useState } from 'react'
 
 import { motion } from '@/lib/animation'
@@ -39,7 +38,7 @@ const listVariants = {
     x: 0,
     transition: {
       when: 'beforeChildren',
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
   closed: {
@@ -64,7 +63,6 @@ export const Nav = () => {
 
   return (
     <TopMenu>
-      {/* mobile nav */}
       <NavToggle isOpen={isOpen} onClick={toggleNav} />
       {isOpen ? (
         <motion.div
@@ -76,9 +74,9 @@ export const Nav = () => {
           <div className='flex w-full max-w-7xl justify-between'>
             <Socials />
             <div className='flex flex-col gap-10 text-right'>
-              {links.map((link) => (
+              {links.map((link, index) => (
                 <motion.div key={link.url} variants={listItemVariants}>
-                  <NavLink link={link} className='text-4xl uppercase' />
+                  <NavLink link={link} index={index} />
                 </motion.div>
               ))}
             </div>

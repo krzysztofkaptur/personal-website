@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function Contact() {
   return (
-    <PageAnimation>
+    <PageAnimation className='my-auto'>
       <section className='flex gap-8'>
         <div className='flex-1'>Say hello</div>
         <ContactForm />

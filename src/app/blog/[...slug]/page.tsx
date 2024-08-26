@@ -4,7 +4,7 @@ import '@/styles/mdx.css'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { MDXContent, PageAnimation, Text } from '@/components'
+import { BackButton, MDXContent, PageAnimation, Text } from '@/components'
 
 interface PostPageProps {
   params: {
@@ -73,6 +73,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <PageAnimation>
+      <BackButton link='/blog' />
       <article className='flex flex-col gap-10 py-10'>
         <header>
           <Text variant='h1'>{post.title}</Text>

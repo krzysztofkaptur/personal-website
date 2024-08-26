@@ -10,9 +10,7 @@ export const metadata: Metadata = {
 export default async function SideProjects() {
   return (
     <PageAnimation>
-      <section className='flex gap-8'>
-        <h1>My side projects</h1>
-      </section>
+      <h1>My side projects</h1>
     </PageAnimation>
   )
 }

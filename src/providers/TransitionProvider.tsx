@@ -59,8 +59,11 @@ export const TransitionProvider = ({ children }: TransitionProviderProps) => {
 
   return (
     <AnimatePresence mode='wait'>
-      <div key={pathname}>
-        <div className='flex max-h-screen overflow-hidden'>
+      <div
+        key={pathname}
+        className='flex min-h-screen flex-col bg-gradient-to-b from-gray-950 to-gray-800'
+      >
+        <div className='pointer-events-none flex max-h-screen overflow-hidden'>
           {animationItems?.map((item, index) => (
             <>
               <motion.div
@@ -71,7 +74,7 @@ export const TransitionProvider = ({ children }: TransitionProviderProps) => {
                 transition={{ duration: 0.6, ease: 'easeOut' }}
               />
               <motion.div
-                className='fixed bottom-0 left-0 right-0 top-0 z-50 m-auto h-fit w-fit cursor-default text-6xl text-white'
+                className='fixed bottom-0 left-0 right-0 top-0 z-50 m-auto h-fit w-fit -rotate-45 cursor-default text-8xl text-white'
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 0 }}
                 exit={{ opacity: 0 }}

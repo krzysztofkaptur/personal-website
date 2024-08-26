@@ -3,16 +3,19 @@
 import { PropsWithChildren } from 'react'
 
 import { motion } from '@/lib/animation'
+import { cn } from '@/lib/utils'
 
-type PageAnimationProps = PropsWithChildren<{}>
+type PageAnimationProps = PropsWithChildren<{
+  className?: string
+}>
 
-export const PageAnimation = ({ children }: PageAnimationProps) => {
+export const PageAnimation = ({ className, children }: PageAnimationProps) => {
   return (
     <motion.div
-      className='h-full'
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
+      className={cn('h-full', className)}
     >
       {children}
     </motion.div>

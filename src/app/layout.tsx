@@ -5,9 +5,9 @@ import { cn } from '@/lib/utils'
 
 import { TransitionProvider } from '@/providers'
 
-import { Toaster } from '@/ui'
+import { Nav, Socials } from '@/components'
 
-import { Nav } from './(home)/parts'
+import { Toaster } from '@/ui'
 
 const primaryFont = Montserrat({
   subsets: ['latin'],
@@ -24,18 +24,25 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' className='dark'>
       <body
         className={cn(
           primaryFont.variable,
           secondaryFont.variable,
-          'flex h-screen flex-col bg-gradient-to-b from-blue-100 to-red-100'
+          'overflow-x-hidden'
         )}
       >
         <TransitionProvider>
-          <Nav />
-          <div className='mx-auto max-w-4xl flex-1 px-4 pt-20'>
-            <main>{children}</main>
+          <div className='max-w-7xl'>
+            <Nav />
+          </div>
+          <div className='mx-auto flex w-full max-w-7xl flex-1 gap-20 px-4'>
+            <Socials />
+            <main className='w-full'>
+              <section className='flex min-h-[calc(100vh-92px)] flex-col'>
+                {children}
+              </section>
+            </main>
           </div>
         </TransitionProvider>
         <Toaster />

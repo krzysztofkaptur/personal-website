@@ -12,17 +12,19 @@ type Link = {
 
 type NavLinkProps = {
   link: Link
+  className: string
 }
 
-export const NavLink = ({ link }: NavLinkProps) => {
+export const NavLink = ({ link, className }: NavLinkProps) => {
   const pathname = usePathname()
 
   return (
     <Link
       href={link.url}
       className={cn(
-        'whitespace-nowrap rounded p-1',
-        pathname === link.url ? 'bg-black text-white' : ''
+        'relative whitespace-nowrap rounded p-1',
+        pathname === link.url && 'text-red-500',
+        className
       )}
     >
       {link.label}

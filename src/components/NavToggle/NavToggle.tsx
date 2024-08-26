@@ -14,7 +14,6 @@ export const NavToggle = ({ isOpen, onClick }: NavToggleProps) => {
     },
     opened: {
       rotate: 45,
-      backgroundColor: 'rgb(255,255,255)',
     },
   }
 
@@ -33,29 +32,28 @@ export const NavToggle = ({ isOpen, onClick }: NavToggleProps) => {
     },
     opened: {
       rotate: -45,
-      backgroundColor: 'rgb(255,255,255)',
     },
   }
 
   return (
     <button
-      className='relative z-50 flex h-8 w-10 cursor-pointer flex-col justify-between lg:hidden'
+      className='relative z-50 flex h-8 w-10 cursor-pointer flex-col justify-between'
       onClick={onClick}
     >
       <motion.div
         animate={isOpen ? 'opened' : 'closed'}
         variants={topVariants}
-        className='h-1 w-10 origin-left rounded bg-black'
+        className='h-1 w-10 origin-left rounded bg-white'
       ></motion.div>
       <motion.div
         animate={isOpen ? 'opened' : 'closed'}
         variants={middleVariants}
-        className='h-1 w-10 rounded bg-black'
+        className='h-1 w-10 rounded bg-white'
       ></motion.div>
       <motion.div
         animate={isOpen ? 'opened' : 'closed'}
         variants={bottomVariants}
-        className='h-1 w-10 origin-left rounded bg-black'
+        className='h-1 w-10 origin-left rounded bg-white'
       ></motion.div>
     </button>
   )

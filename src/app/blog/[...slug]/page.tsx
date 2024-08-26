@@ -4,7 +4,7 @@ import '@/styles/mdx.css'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { MDXContent, PageAnimation } from '@/components'
+import { MDXContent, PageAnimation, Text } from '@/components'
 
 interface PostPageProps {
   params: {
@@ -73,16 +73,13 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <PageAnimation>
-      <article className='prose dark:prose-invert container mx-auto max-w-3xl py-6'>
-        <h1 className='mb-2'>{post.title}</h1>
-
-        {post.description ? (
-          <p className='mt-0 text-xl text-muted-foreground'>
-            {post.description}
-          </p>
-        ) : null}
-        <hr className='my-4' />
-        <MDXContent code={post.body} />
+      <article className='flex flex-col gap-10 py-10'>
+        <header>
+          <Text variant='h1'>{post.title}</Text>
+        </header>
+        <div className='flex flex-col gap-4'>
+          <MDXContent code={post.body} />
+        </div>
       </article>
     </PageAnimation>
   )

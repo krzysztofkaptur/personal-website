@@ -13,3 +13,13 @@ export function sortPosts(posts: Array<Post>) {
     return 0
   })
 }
+
+export function formatDate(dateStr: string) {
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  } as const
+
+  return new Date(dateStr).toLocaleDateString('en-US', options)
+}

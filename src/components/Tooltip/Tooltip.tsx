@@ -14,7 +14,7 @@ type TooltipProps = PropsWithChildren<{
 
 export const Tooltip = ({ tip, children }: TooltipProps) => {
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={100}>
       <UiTooltip>
         <TooltipTrigger asChild>{children}</TooltipTrigger>
         <TooltipContent>

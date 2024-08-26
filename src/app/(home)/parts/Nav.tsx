@@ -98,10 +98,8 @@ export const Nav = () => {
         </Link>
       </div>
       <div className='hidden flex-1 items-center justify-end gap-4 lg:flex'>
-        <Tooltip tip='Copy email to clipboard'>
-          {/* <Button onClick={copyEmail}> */}
+        <Tooltip tip='Click to copy email'>
           <Mail onClick={copyEmail} className='cursor-pointer text-red-600' />
-          {/* </Button> */}
         </Tooltip>
         <Link href='https://github.com/krzysztofkaptur' target='_blank'>
           <Github />

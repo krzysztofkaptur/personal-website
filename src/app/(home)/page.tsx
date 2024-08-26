@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 
-import { Button, PageAnimation } from '@/components'
+import { Button, PageAnimation, Text } from '@/components'
 
 export const metadata: Metadata = {
   title: process.env.WEBSITE_NAME,
@@ -21,14 +21,14 @@ export default async function Home() {
           />
         </div>
         <div className='flex flex-1 flex-col justify-center gap-6'>
-          <h1 className='text-xl sm:text-3xl md:text-4xl'>
+          <Text variant='h1' className='text-xl sm:text-3xl md:text-4xl'>
             Crafting Digital Experiences, Designing Tomorrow.
-          </h1>
-          <p className='text-sm sm:text-base md:text-lg'>
+          </Text>
+          <Text className='text-sm sm:text-base md:text-lg'>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis
             optio veniam enim vero, sunt maxime, sapiente at perferendis sint
             quidem iste ipsum culpa nobis omnis.
-          </p>
+          </Text>
           <div className='flex gap-4'>
             <Button href='/portfolio'>View my work</Button>
             <Button href='/contact'>Contact me</Button>

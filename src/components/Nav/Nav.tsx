@@ -57,19 +57,23 @@ const listItemVariants = {
   },
 }
 
-export const Nav = () => {
+type NavProps = {
+  className?: string
+}
+
+export const Nav = ({ className }: NavProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const toggleNav = () => setIsOpen((prev) => !prev)
 
   return (
-    <TopMenu>
+    <TopMenu className={className}>
       <NavToggle isOpen={isOpen} onClick={toggleNav} />
       {isOpen ? (
         <motion.div
           variants={listVariants}
           initial='closed'
           animate='opened'
-          className='fixed left-0 top-0 z-20 flex h-screen w-screen items-center justify-center bg-black text-xl text-white'
+          className='fixed left-0 top-0 z-40 flex h-screen w-screen items-center justify-center bg-black text-xl text-white'
         >
           <div className='flex w-full max-w-7xl justify-between px-4'>
             <Socials />

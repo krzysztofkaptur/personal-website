@@ -3,6 +3,7 @@
 import Link from 'next/link'
 
 import { Github, Linkedin, Mail } from '@/lib/icons'
+import { cn } from '@/lib/utils'
 
 import { Button } from '@/components'
 
@@ -21,7 +22,11 @@ const socials = [
   },
 ]
 
-export const Socials = () => {
+type SocialsProps = {
+  className?: string
+}
+
+export const Socials = ({ className }: SocialsProps) => {
   const { toast } = useToast()
   const copyEmail = async () => {
     try {
@@ -36,7 +41,7 @@ export const Socials = () => {
   }
 
   return (
-    <aside className='flex max-h-[calc(100vh-92px)]'>
+    <aside className={cn('flex max-h-[calc(100vh-92px)]', className)}>
       <div className='flex flex-col gap-6 self-center'>
         <Button variant='clean'>
           <Mail onClick={copyEmail} size={iconSize} />

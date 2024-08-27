@@ -1,10 +1,10 @@
 'use client'
 
-import { useRef } from 'react'
-
-import { motion, useInView } from '@/lib/animation'
+import { motion } from '@/lib/animation'
 
 import { Text } from '@/components'
+
+import { AboutSkill } from '.'
 
 const skills = [
   'HTML',
@@ -15,52 +15,28 @@ const skills = [
   'NextJS',
   'Vue',
   'Nuxt',
-  'Vitest',
-  'Testing library',
-  'Playwright',
-  'Tailwind',
-  'ShadCN',
-  'Vercel',
-  'AWS',
-  'Git',
-  'Github Actions',
-  'Docker',
 ]
 
 export const AboutSkills = () => {
-  const titleRef = useRef(null)
-  const isTitleInView = useInView(titleRef, { once: true, margin: '-100px' })
-
   return (
-    <section className='flex h-screen flex-col gap-6'>
+    <section className='flex min-h-screen flex-col justify-center gap-6 py-10'>
       <header>
-        <Text variant='h2'>
+        <Text variant='h2' className='uppercase text-primary'>
           <motion.span
-            initial={{ x: '-300px', opacity: 0 }}
-            animate={isTitleInView ? { x: 0, opacity: 1 } : {}}
-            transition={{ delay: 0.2 }}
-            ref={titleRef}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
           >
-            Skills
+            Main tech skills
           </motion.span>
         </Text>
       </header>
-      <ul className='flex max-w-md flex-wrap gap-2'>
+      <div className='flex flex-col gap-4'>
         {skills.map((skill, index) => (
-          <motion.div
-            key={skill}
-            className='bg-black p-1 text-white'
-            initial={{ opacity: 0, x: '-40px' }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 1,
-              delay: index * 0.3,
-            }}
-          >
-            {skill}
-          </motion.div>
+          <AboutSkill key={index} skill={skill} index={index} />
         ))}
-      </ul>
+      </div>
     </section>
   )
 }

@@ -2,20 +2,21 @@ import { Text } from '@/components'
 
 export const AboutBiography = () => {
   return (
-    <section className='flex h-screen gap-8'>
-      <div className='flex flex-1 flex-col gap-6'>
-        <header>
-          <Text variant='h2'>Biography</Text>
-        </header>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis
-          optio veniam enim vero, sunt maxime, sapiente at perferendis sint
-          quidem iste ipsum culpa nobis omnis? Aperiam optio odit eius in natus
-          sit impedit, tempore aspernatur unde enim ab magnam deleniti incidunt,
-          minima dolor, vel dicta. Quis quasi consectetur earum totam.
-        </p>
-      </div>
-      <div className='flex-1'>SVG</div>
+    <section className='flex min-h-screen flex-col justify-center gap-8'>
+      <header>
+        <Text variant='h2' className='uppercase text-primary'>
+          About me
+        </Text>
+      </header>
+      <Text className='text-4xl leading-relaxed'>
+        Throughout my{' '}
+        {new Date().getFullYear() - new Date('2017-08-17').getFullYear()} year
+        Front-end journey I&apos;ve worked with many different technologies, not
+        shying away from new challenges and a chance to learn new things.
+      </Text>
+      <Text className='text-4xl leading-relaxed'>
+        Feel free to reach out - I&apos;m open for new, exciting opportunities!
+      </Text>
     </section>
   )
 }

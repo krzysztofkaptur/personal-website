@@ -33,11 +33,10 @@ export default function RootLayout({
         )}
       >
         <TransitionProvider>
-          <div className='mx-auto w-full max-w-7xl'>
-            <Nav />
-          </div>
-          <div className='mx-auto flex w-full max-w-7xl flex-1 gap-20 px-4'>
-            <Socials />
+          <Nav />
+          <div className='mx-auto flex w-full max-w-6xl flex-1 gap-40 px-4'>
+            <Socials className='fixed bottom-0 top-0' />
+            <div></div>
             <main className='w-full'>
               <section className='flex min-h-[calc(100vh-92px)] flex-col'>
                 {children}

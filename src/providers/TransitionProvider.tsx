@@ -10,19 +10,19 @@ type TransitionProviderProps = PropsWithChildren<{}>
 const animationItems = [
   {
     id: 1,
-    className: 'absolute left-0 z-40 h-screen w-1/4 bg-black',
+    className: 'fixed left-0 z-40 h-screen w-1/4 bg-black',
   },
   {
     id: 2,
-    className: 'absolute left-1/4 z-40 h-screen w-1/4 bg-black',
+    className: 'fixed left-1/4 z-40 h-screen w-1/4 bg-black',
   },
   {
     id: 3,
-    className: 'absolute left-2/4 z-40 h-screen w-1/4 bg-black',
+    className: 'fixed left-2/4 z-40 h-screen w-1/4 bg-black',
   },
   {
     id: 4,
-    className: 'absolute left-3/4 z-40 h-screen w-1/4 bg-black',
+    className: 'fixed left-3/4 z-40 h-screen w-1/4 bg-black',
   },
 ]
 

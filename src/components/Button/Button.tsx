@@ -1,9 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { PropsWithChildren, useCallback } from 'react'
-
-import { motion, useAnimation } from '@/lib/animation'
+import { PropsWithChildren } from 'react'
 
 import { Button as ButtonUI, Spinner } from '@/ui'
 import type { ButtonProps } from '@/ui'
@@ -11,7 +9,6 @@ import type { ButtonProps } from '@/ui'
 type ButtonPropsType = PropsWithChildren<
   ButtonProps & {
     isLoading?: boolean
-    isRound?: boolean
     href?: string
   }
 >
@@ -23,33 +20,36 @@ export const Button = ({
   href,
   ...props
 }: ButtonPropsType) => {
-  const controls = useAnimation()
-
   return (
     <>
       {href ? (
         <Link href={href}>
-          <ButtonUI
+          <ButtonContent
+            isLoading={isLoading}
             type={type}
-            disabled={isLoading}
-            onMouseEnter={() => controls.start('start')}
-            onMouseLeave={() => controls.stop()}
+            href={href}
             {...props}
           >
-            {!isLoading ? children : <Spinner />}
-          </ButtonUI>
+            {children}
+          </ButtonContent>
         </Link>
       ) : (
-        <ButtonUI
-          type={type}
-          disabled={isLoading}
-          onMouseEnter={() => controls.start('start')}
-          onMouseLeave={() => controls.stop()}
-          {...props}
-        >
-          {!isLoading ? children : <Spinner />}
-        </ButtonUI>
+        <ButtonContent isLoading={isLoading} type={type} href={href} {...props}>
+          {children}
+        </ButtonContent>
       )}
     </>
   )
 }
+
+const ButtonContent = ({
+  type,
+  disabled,
+  isLoading,
+  children,
+  ...props
+}: ButtonPropsType): JSX.Element => (
+  <ButtonUI type={type} disabled={isLoading} {...props}>
+    {!isLoading ? children : <Spinner />}
+  </ButtonUI>
+)

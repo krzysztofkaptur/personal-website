@@ -10,7 +10,6 @@ export const HomeContent = () => {
           variant='h6'
           className='inline-block text-xl font-semibold uppercase'
         >
-          {/* <AnimatedText text='Hello!' className='bg-white p-2 text-black' /> */}
           Hello!
         </Text>
         <Text
@@ -27,10 +26,9 @@ export const HomeContent = () => {
           <span>developer</span>
         </Text>
       </header>
-      <Text className='text-sm sm:text-base md:text-lg'>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis
-        optio veniam enim vero, sunt maxime, sapiente at perferendis sint quidem
-        iste ipsum culpa nobis omnis.
+      <Text className='text-sm font-semibold sm:text-base md:text-xl'>
+        A specialist from Poland, working on top-notch projects in variety of
+        modern technologies.
       </Text>
       <div className='flex gap-4'>
         <Button href='/portfolio'>View my work</Button>

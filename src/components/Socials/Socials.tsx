@@ -38,11 +38,11 @@ export const Socials = () => {
   return (
     <aside className='flex max-h-[calc(100vh-92px)]'>
       <div className='flex flex-col gap-6 self-center'>
-        <Button variant='clean' animate>
+        <Button variant='clean'>
           <Mail onClick={copyEmail} size={iconSize} />
         </Button>
         {socials?.map((social) => (
-          <Button variant='clean' animate key={social.url}>
+          <Button key={social.url} variant='clean'>
             <Link
               key={social.url}
               href={social.url}

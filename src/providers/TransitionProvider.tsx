@@ -65,9 +65,8 @@ export const TransitionProvider = ({ children }: TransitionProviderProps) => {
       >
         <div className='pointer-events-none flex max-h-screen overflow-hidden'>
           {animationItems?.map((item, index) => (
-            <>
+            <div key={index}>
               <motion.div
-                key={item.id}
                 className={item.className}
                 initial={{ height: '100vh' }}
                 animate={{ height: 0, transition: { delay: index * 0.2 } }}
@@ -92,7 +91,7 @@ export const TransitionProvider = ({ children }: TransitionProviderProps) => {
                     </span>
                   ))}
               </motion.div>
-            </>
+            </div>
           ))}
         </div>
         {children}

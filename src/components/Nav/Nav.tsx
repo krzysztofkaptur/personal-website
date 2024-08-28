@@ -19,18 +19,18 @@ const links = [
     url: '/portfolio',
     label: 'Portfolio',
   },
-  {
-    url: '/side-projects',
-    label: 'Side projects',
-  },
+  // {
+  //   url: '/side-projects',
+  //   label: 'Side projects',
+  // },
   {
     url: '/blog',
     label: 'Blog',
   },
-  {
-    url: '/contact',
-    label: 'Contact',
-  },
+  // {
+  //   url: '/contact',
+  //   label: 'Contact',
+  // },
 ]
 
 const listVariants = {

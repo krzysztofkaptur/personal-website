@@ -9,7 +9,7 @@ import { Button } from '@/components'
 
 import { useToast } from '@/ui'
 
-const iconSize = 40
+const iconSize = 30
 
 const socials = [
   {

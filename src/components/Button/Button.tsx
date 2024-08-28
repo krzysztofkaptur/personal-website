@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { PropsWithChildren } from 'react'
 
+import { ArrowRight } from '@/lib/icons'
+
 import { Button as ButtonUI, Spinner } from '@/ui'
 import type { ButtonProps } from '@/ui'
 
@@ -31,6 +33,7 @@ export const Button = ({
             {...props}
           >
             {children}
+            {href.includes('http') ? <ArrowRight size={16} /> : ''}
           </ButtonContent>
         </Link>
       ) : (

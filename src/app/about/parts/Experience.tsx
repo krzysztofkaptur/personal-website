@@ -66,7 +66,7 @@ export const AboutExperience = () => {
       </header>
       <section className='relative flex flex-col'>
         {jobs?.map((job) => (
-          <div className='flex gap-10'>
+          <div className='flex gap-10' key={job.company}>
             <div className='relative flex flex-col items-center'>
               <motion.div
                 initial={{ opacity: 0 }}

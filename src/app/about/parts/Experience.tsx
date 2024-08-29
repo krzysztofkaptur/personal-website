@@ -67,7 +67,7 @@ export const AboutExperience = () => {
       <section className='relative flex flex-col'>
         {jobs?.map((job) => (
           <div className='flex gap-10' key={job.company}>
-            <div className='relative flex flex-col items-center'>
+            <div className='relative hidden flex-col items-center md:flex'>
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -90,7 +90,10 @@ export const AboutExperience = () => {
               className='pb-8'
             >
               <header>
-                <Text variant='h4' className='flex gap-2 font-semibold'>
+                <Text
+                  variant='h4'
+                  className='flex flex-col text-lg font-semibold md:flex-row md:gap-2 md:text-2xl'
+                >
                   {job.title}
                   <Link href={job.url} target='_blank' className='text-primary'>
                     @{job.company}

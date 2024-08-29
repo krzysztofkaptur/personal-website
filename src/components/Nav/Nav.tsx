@@ -27,10 +27,10 @@ const links = [
     url: '/blog',
     label: 'Blog',
   },
-  // {
-  //   url: '/contact',
-  //   label: 'Contact',
-  // },
+  {
+    url: '/contact',
+    label: 'Contact',
+  },
 ]
 
 const listVariants = {
@@ -66,8 +66,10 @@ export const Nav = ({ className }: NavProps) => {
   const toggleNav = () => setIsOpen((prev) => !prev)
 
   return (
-    <TopMenu className={className}>
-      <NavToggle isOpen={isOpen} onClick={toggleNav} />
+    <>
+      <TopMenu className={className}>
+        <NavToggle isOpen={isOpen} onClick={toggleNav} />
+      </TopMenu>
       {isOpen ? (
         <motion.div
           variants={listVariants}
@@ -77,7 +79,7 @@ export const Nav = ({ className }: NavProps) => {
         >
           <div className='flex w-full max-w-7xl justify-between px-4'>
             <Socials />
-            <div className='flex flex-col gap-10 text-right'>
+            <div className='flex flex-col gap-10 pr-4 text-right'>
               {links.map((link, index) => (
                 <motion.div key={link.url} variants={listItemVariants}>
                   <NavLink link={link} index={index} />
@@ -87,6 +89,6 @@ export const Nav = ({ className }: NavProps) => {
           </div>
         </motion.div>
       ) : null}
-    </TopMenu>
+    </>
   )
 }

@@ -21,7 +21,7 @@ export async function generateMetadata({ params: { slug } }: ProjectProps) {
 
 export default function Project({ params: { slug } }: ProjectProps) {
   return (
-    <section className='flex flex-col gap-40 py-40'>
+    <section className='flex flex-col gap-20 py-40 md:gap-40'>
       <BackButton link='/portfolio' />
       <ProjectContent slug={slug} />
     </section>

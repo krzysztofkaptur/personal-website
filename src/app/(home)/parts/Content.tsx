@@ -20,7 +20,7 @@ export const HomeContent = () => {
           <div className='flex gap-1 whitespace-nowrap'>
             <AnimatedText
               text='Front-end'
-              className='bg-white p-4 text-black'
+              className='bg-white p-2 text-black md:p-4'
             />
           </div>
           <span>developer</span>

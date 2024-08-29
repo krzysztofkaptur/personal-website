@@ -14,19 +14,19 @@ export const Text = ({ children, variant = 'p', className }: TextProps) => {
   const styles = () => {
     switch (variant) {
       case 'h1':
-        return 'text-5xl tracking-widest'
+        return 'text-4xl md:text-5xl tracking-widest'
       case 'h2':
-        return 'text-4xl tracking-widest'
+        return 'text-3xl md:text-4xl tracking-widest'
       case 'h3':
-        return 'text-3xl tracking-widest'
+        return 'text-2xl md:text-3xl tracking-widest'
       case 'h4':
-        return 'text-2xl tracking-widest'
+        return 'text-xl md:text-2xl tracking-widest'
       case 'h5':
-        return 'text-xl tracking-widest'
+        return 'text-lg md:text-xl tracking-widest'
       case 'h6':
-        return 'text-lg tracking-widest'
+        return 'text-base md:text-lg tracking-widest'
       case 'p':
-        return 'text-base'
+        return 'text-sm md:text-base'
       default:
         return ''
     }

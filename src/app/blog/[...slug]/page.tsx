@@ -1,12 +1,14 @@
 import { posts } from '#site/content'
-import { siteConfig } from '@/config/site'
-import '@/styles/mdx.css'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { BackButton, MDXContent, PageAnimation, Text } from '@/components'
+import { PageAnimation } from '@/components'
 
-interface PostPageProps {
+import '@/styles/mdx.css'
+
+import { BlogPostContent } from './parts'
+
+type PostPageProps = {
   params: {
     slug: string[]
   }
@@ -28,33 +30,8 @@ export async function generateMetadata({
     return {}
   }
 
-  const ogSearchParams = new URLSearchParams()
-  ogSearchParams.set('title', post.title)
-
   return {
-    title: post.title,
-    description: post.description,
-    authors: { name: siteConfig.author },
-    openGraph: {
-      title: post.title,
-      description: post.description,
-      type: 'article',
-      url: post.slug,
-      images: [
-        {
-          url: `/api/og?${ogSearchParams.toString()}`,
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.description,
-      images: [`/api/og?${ogSearchParams.toString()}`],
-    },
+    title: `${post.title} | ${process.env.WEBSITE_NAME}`,
   }
 }
 
@@ -73,15 +50,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <PageAnimation>
-      <BackButton link='/blog' />
-      <article className='flex flex-col gap-10 py-10'>
-        <header>
-          <Text variant='h1'>{post.title}</Text>
-        </header>
-        <div className='flex flex-col gap-4'>
-          <MDXContent code={post.body} />
-        </div>
-      </article>
+      <BlogPostContent post={post} />
     </PageAnimation>
   )
 }

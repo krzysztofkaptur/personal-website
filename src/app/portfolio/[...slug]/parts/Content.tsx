@@ -18,10 +18,8 @@ export const ProjectContent = ({ slug }: ProjectContentProps) => {
   return (
     <article className='flex flex-col gap-20'>
       <header className='flex flex-col gap-6 text-center'>
-        <Text className='text-xl font-medium uppercase'>
-          {project.category}
-        </Text>
-        <Text variant='h1' className='text-7xl font-semibold'>
+        <Text className='font-medium uppercase'>{project.category}</Text>
+        <Text variant='h1' className='font-semibold'>
           {project.project}
         </Text>
       </header>
@@ -52,17 +50,17 @@ export const ProjectContent = ({ slug }: ProjectContentProps) => {
           aliquid adipisci? Beatae, tempora. Aperiam!
         </Text>
       </div>
-      <div className='flex justify-between border-t border-solid border-white py-4'>
+      <div className='flex flex-col justify-between gap-8 border-t border-solid border-white py-4 md:flex-row'>
         <div className='flex flex-1 flex-col gap-2'>
-          <Text>Team</Text>
+          <Text variant='h6'>Team</Text>
           <Text>{project.company}</Text>
         </div>
         <div className='flex flex-1 flex-col gap-2'>
-          <Text>Role</Text>
+          <Text variant='h6'>Role</Text>
           <Text>{project.role}</Text>
         </div>
         <div className='flex-2 flex flex-col gap-2'>
-          <Text>Technology</Text>
+          <Text variant='h6'>Technology</Text>
           <div className='flex flex-wrap gap-2'>
             {project.techStack.map((tech) => (
               <Badge key={tech} text={tech} variant='outline' />

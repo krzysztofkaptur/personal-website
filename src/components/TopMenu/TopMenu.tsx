@@ -6,7 +6,7 @@ export const TopMenu = ({ children, className, ...rest }: TopMenuProps) => {
   return (
     <nav
       className={cn(
-        'fixed left-[calc(50%-40rem)] z-50 flex w-full max-w-7xl justify-end gap-4 py-4',
+        'fixed left-[50%] z-50 flex w-full max-w-7xl -translate-x-[50%] justify-end gap-4 p-4',
         className
       )}
       {...rest}

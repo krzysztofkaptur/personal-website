@@ -13,7 +13,7 @@ const components = {
   Text,
 }
 
-interface MdxProps {
+type MdxProps = {
   code: string
 }
 

@@ -5,6 +5,8 @@ import { PropsWithChildren } from 'react'
 
 import { AnimatePresence, motion } from '@/lib/animation'
 
+import { Text } from '@/components'
+
 type TransitionProviderProps = PropsWithChildren<{}>
 
 const animationItems = [
@@ -73,7 +75,7 @@ export const TransitionProvider = ({ children }: TransitionProviderProps) => {
                 transition={{ duration: 0.6, ease: 'easeOut' }}
               />
               <motion.div
-                className='fixed bottom-0 left-0 right-0 top-0 z-50 m-auto flex h-fit w-fit cursor-default gap-2 text-6xl tracking-widest text-white'
+                className='fixed bottom-0 left-0 right-0 top-0 z-50 m-auto flex h-fit w-fit cursor-default gap-2 tracking-widest text-white md:text-6xl'
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 0 }}
                 exit={{ opacity: 0 }}
@@ -83,12 +85,13 @@ export const TransitionProvider = ({ children }: TransitionProviderProps) => {
                   .find((page) => page?.url === pathname)
                   ?.label.split('')
                   .map((letter, index) => (
-                    <span
+                    <Text
                       key={index}
-                      className='inline-block bg-white p-4 text-black'
+                      variant='span'
+                      className='inline-block bg-white p-2 text-black md:p-4'
                     >
                       {letter}
-                    </span>
+                    </Text>
                   ))}
               </motion.div>
             </div>

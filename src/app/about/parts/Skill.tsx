@@ -25,7 +25,7 @@ export const AboutSkill = ({ skill, index }: AboutSkillProps) => {
       onViewportEnter={whileInView}
     >
       <motion.div
-        className='p-1 py-4 text-8xl font-semibold'
+        className='p-1 py-4 text-5xl font-semibold md:text-8xl'
         initial={{ y: '100px' }}
         animate={isInView ? { y: 0 } : {}}
         transition={{ duration: 1 }}

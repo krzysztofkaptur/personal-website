@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 import { Badge, Button, Image, Text } from '@/components'
 
@@ -10,6 +10,10 @@ type ProjectContentProps = {
 
 export const ProjectContent = ({ slug }: ProjectContentProps) => {
   const project = projects[slug[0] as keyof typeof projects]
+
+  if (!project) {
+    notFound()
+  }
 
   return (
     <article className='flex flex-col gap-20'>

@@ -11,8 +11,11 @@ type ProjectProps = {
 }
 
 export async function generateMetadata({ params: { slug } }: ProjectProps) {
+  if (!projects[slug]?.project)
+    return { title: `404 | ${process.env.WEBSITE_NAME}` }
+
   return {
-    title: `${projects[slug].project} | ${process.env.WEBSITE_NAME}`,
+    title: `${projects[slug]?.project} | ${process.env.WEBSITE_NAME}`,
   }
 }
 

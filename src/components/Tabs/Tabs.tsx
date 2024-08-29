@@ -8,10 +8,10 @@ import {
   CardTitle,
   Input,
   Label,
-  Tabs as UiTabs,
   TabsContent,
   TabsList,
   TabsTrigger,
+  Tabs as UiTabs,
 } from '@/ui'
 
 export const Tabs = () => {

@@ -16,7 +16,7 @@ interface BlogPageProps {
   }
 }
 
-export default async function Blog({ searchParams }: BlogPageProps) {
+export default async function Blog({}: BlogPageProps) {
   const publishedPosts = sortPosts(posts.filter((post) => post.published))
 
   return (
@@ -29,7 +29,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
         {publishedPosts?.length > 0 ? (
           <section className='flex flex-col gap-8'>
             {publishedPosts.map((post) => {
-              const { slug, title, description, tags, date, author } = post
+              const { slug, title, description, tags, date } = post
               return (
                 <article key={slug} className='flex flex-1 flex-col gap-2'>
                   <header>

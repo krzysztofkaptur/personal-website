@@ -52,7 +52,7 @@ const ButtonContent = ({
   children,
   ...props
 }: ButtonPropsType): JSX.Element => (
-  <ButtonUI type={type} disabled={isLoading} {...props}>
+  <ButtonUI type={type} disabled={isLoading || disabled} {...props}>
     {!isLoading ? children : <Spinner />}
   </ButtonUI>
 )

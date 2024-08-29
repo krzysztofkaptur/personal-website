@@ -16,7 +16,7 @@ type NavLinkProps = {
   className?: string
 }
 
-export const NavLink = ({ link, index, className }: NavLinkProps) => {
+export const NavLink = ({ link, className }: NavLinkProps) => {
   const pathname = usePathname()
 
   return (

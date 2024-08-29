@@ -1,7 +1,6 @@
 import { PropsWithChildren } from 'react'
 
 import {
-  Button,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,

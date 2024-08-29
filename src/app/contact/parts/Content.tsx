@@ -10,7 +10,7 @@ export const ContactContent = () => {
   return (
     <section className='flex gap-8'>
       <div className='flex-1'>
-        <Text variant='h6'>Don&apos;t be a stranger</Text>
+        <Text variant='h6'>Don't be a stranger</Text>
         <div className='flex gap-1'>
           {'Say-hello'.split('').map((letter, index) => (
             <motion.span

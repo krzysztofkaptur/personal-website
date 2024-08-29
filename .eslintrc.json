@@ -5,5 +5,9 @@
     "prettier",
     "plugin:storybook/recommended",
     "plugin:storybook/recommended"
-  ]
+  ],
+  "rules": {
+    "no-unused-vars": "warn",
+    "react/no-unescaped-entities": 0
+  }
 }

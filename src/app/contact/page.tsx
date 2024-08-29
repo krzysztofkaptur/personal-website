@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 import { PageAnimation } from '@/components'
 
@@ -10,6 +11,9 @@ export const metadata: Metadata = {
 }
 
 export default async function Contact() {
+  // todo: make this page usable
+  notFound()
+
   return (
     <PageAnimation className='my-auto'>
       <ContactContent />

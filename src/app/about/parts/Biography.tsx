@@ -11,11 +11,11 @@ export const AboutBiography = () => {
       <Text className='text-4xl leading-relaxed'>
         Throughout my{' '}
         {new Date().getFullYear() - new Date('2017-08-17').getFullYear()} year
-        Front-end journey I&apos;ve worked with many different technologies, not
+        Front-end journey I've worked with many different technologies, not
         shying away from new challenges and a chance to learn new things.
       </Text>
       <Text className='text-4xl leading-relaxed'>
-        Feel free to reach out - I&apos;m open for new, exciting opportunities!
+        Feel free to reach out - I'm open for new, exciting opportunities!
       </Text>
     </section>
   )

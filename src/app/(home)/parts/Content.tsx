@@ -17,7 +17,7 @@ export const HomeContent = () => {
           className='text-xl sm:text-3xl md:text-4xl lg:text-8xl'
         >
           I'm <span className='font-medium'>Chris</span>,{' '}
-          <div className='flex gap-1 whitespace-nowrap'>
+          <div className='flex gap-1 whitespace-nowrap font-medium'>
             <AnimatedText
               text='Front-end'
               className='bg-white p-2 text-black md:p-4'

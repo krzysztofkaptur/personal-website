@@ -2,7 +2,7 @@
 
 import { motion } from '@/lib/animation'
 
-import { Text } from '@/components'
+import { Badge, Text } from '@/components'
 
 import { AboutSkill } from '.'
 
@@ -15,6 +15,23 @@ const skills = [
   'NextJS',
   'Vue',
   'Nuxt',
+  'Git',
+  'Vitest',
+  'Testing-library',
+  'Playwright',
+]
+
+const additionalSkills = [
+  'Jest',
+  'Docker',
+  'AWS',
+  'Cypress',
+  'Wordpress',
+  'SCSS',
+  'Bootstrap',
+  'jQuery',
+  'Magento',
+  'Vue test utils',
 ]
 
 export const AboutSkills = () => {
@@ -33,9 +50,19 @@ export const AboutSkills = () => {
         </Text>
       </header>
       <div className='flex flex-col gap-4'>
-        {skills.map((skill, index) => (
-          <AboutSkill key={index} skill={skill} index={index} />
-        ))}
+        {skills?.map((skill) => <AboutSkill key={skill} skill={skill} />)}
+      </div>
+      <div className='flex flex-col gap-4 py-10 md:py-32'>
+        <header>
+          <Text variant='h2' className='text-primary'>
+            Other tech I've worked with
+          </Text>
+        </header>
+        <div className='flex flex-wrap gap-2'>
+          {additionalSkills?.map((skill) => (
+            <Badge key={skill} variant='outline' text={skill} />
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -6,10 +6,9 @@ import { motion } from '@/lib/animation'
 
 type AboutSkillProps = {
   skill: string
-  index: number
 }
 
-export const AboutSkill = ({ skill, index }: AboutSkillProps) => {
+export const AboutSkill = ({ skill }: AboutSkillProps) => {
   // todo: find a way to make this animation's code better
   const [isInView, setIsInView] = useState(false)
   const whileInView = () => {
@@ -19,11 +18,7 @@ export const AboutSkill = ({ skill, index }: AboutSkillProps) => {
   }
 
   return (
-    <motion.div
-      key={index}
-      className='overflow-hidden'
-      onViewportEnter={whileInView}
-    >
+    <motion.div className='overflow-hidden' onViewportEnter={whileInView}>
       <motion.div
         className='p-1 py-4 text-5xl font-semibold md:text-8xl'
         initial={{ y: '100px' }}

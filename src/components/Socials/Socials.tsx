@@ -34,6 +34,7 @@ export const Socials = ({ className }: SocialsProps) => {
 
       toast({
         title: 'Email copied to clipboard',
+        variant: 'destructive',
       })
     } catch (err) {
       console.error('Failed to copy: ', err)

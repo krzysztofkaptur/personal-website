@@ -1,3 +1,5 @@
+'use client'
+
 import { cn } from '@/lib/utils'
 
 import type { TopMenuProps } from './types'
@@ -6,12 +8,14 @@ export const TopMenu = ({ children, className, ...rest }: TopMenuProps) => {
   return (
     <nav
       className={cn(
-        'fixed left-[50%] z-50 flex w-full max-w-7xl -translate-x-[50%] justify-end gap-4 p-4',
+        'fixed z-30 flex w-full justify-center bg-neutral-950',
         className
       )}
       {...rest}
     >
-      {children}
+      <div className='flex w-full max-w-7xl justify-end gap-4 p-4'>
+        {children}
+      </div>
     </nav>
   )
 }

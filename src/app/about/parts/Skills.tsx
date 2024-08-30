@@ -35,6 +35,7 @@ const additionalSkills = [
   'Vue test utils',
   'SQL',
   'NodeJS',
+  'Turborepo',
 ]
 
 export const AboutSkills = () => {

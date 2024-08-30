@@ -36,6 +36,7 @@ const jobs: Job[] = [
       'Jest',
       'Testing-library',
       'Storybook',
+      'Turborepo',
     ],
   },
   {

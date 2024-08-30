@@ -23,7 +23,7 @@ export const NavLink = ({ link, className }: NavLinkProps) => {
     <Link
       href={link.url}
       className={cn(
-        `relative whitespace-nowrap rounded text-2xl uppercase sm:text-4xl`,
+        `relative whitespace-nowrap rounded text-2xl uppercase sm:text-4xl md:text-base`,
         pathname === link.url && ' text-red-500 line-through',
         className
       )}

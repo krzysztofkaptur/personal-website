@@ -61,10 +61,7 @@ export const TransitionProvider = ({ children }: TransitionProviderProps) => {
 
   return (
     <AnimatePresence mode='wait'>
-      <div
-        key={pathname}
-        className='flex min-h-screen flex-col border-b border-solid border-gray-700 bg-gradient-to-b from-gray-950 to-gray-800'
-      >
+      <div key={pathname} className='flex min-h-screen flex-col bg-neutral-950'>
         <div className='pointer-events-none flex max-h-screen overflow-hidden'>
           {animationItems?.map((item, index) => (
             <div key={index}>

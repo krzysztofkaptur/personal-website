@@ -37,7 +37,7 @@ export const NavToggle = ({ isOpen, onClick }: NavToggleProps) => {
 
   return (
     <button
-      className='relative z-50 flex h-7 w-8 cursor-pointer flex-col justify-between md:h-8 md:w-10'
+      className='relative z-50 flex h-7 w-8 cursor-pointer flex-col justify-between md:hidden md:h-8 md:w-10'
       onClick={onClick}
     >
       <motion.div

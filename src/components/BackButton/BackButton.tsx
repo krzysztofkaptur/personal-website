@@ -8,7 +8,7 @@ type BackButtonProps = {
 
 export const BackButton = ({ link }: BackButtonProps) => {
   return (
-    <Link href={link} className='flex gap-2'>
+    <Link href={link} className='inline-flex gap-2'>
       <ArrowBigLeft />
       <span>Go back</span>
     </Link>

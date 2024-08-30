@@ -112,7 +112,8 @@ export const projects: Projects = {
     company: 'EFirst Asia',
     project: 'EFirst Asia',
     category: 'Sales',
-    description: '',
+    description:
+      'Home page of a company EFrist Asia which helps to grow Asia e-commerce market.',
     image: '/images/efirst-asia/main.jpg',
     path: 'efirst-asia',
     url: 'https://efirst.asia/',

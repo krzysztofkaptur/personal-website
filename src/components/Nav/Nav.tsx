@@ -69,13 +69,20 @@ export const Nav = ({ className }: NavProps) => {
     <>
       <TopMenu className={className}>
         <NavToggle isOpen={isOpen} onClick={toggleNav} />
+        <div className='hidden gap-4 md:flex'>
+          {links.map((link, index) => (
+            <motion.div key={link.url} variants={listItemVariants}>
+              <NavLink link={link} index={index} />
+            </motion.div>
+          ))}
+        </div>
       </TopMenu>
       {isOpen ? (
         <motion.div
           variants={listVariants}
           initial='closed'
           animate='opened'
-          className='fixed left-0 top-0 z-40 flex h-screen w-screen items-center justify-center bg-black text-xl text-white'
+          className='fixed left-0 top-0 z-20 flex h-screen w-screen items-center justify-center bg-neutral-950 text-xl md:hidden'
         >
           <div className='flex w-full max-w-7xl justify-between px-4'>
             <Socials />

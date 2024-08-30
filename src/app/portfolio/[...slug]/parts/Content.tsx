@@ -34,7 +34,9 @@ export const ProjectContent = ({ slug }: ProjectContentProps) => {
       <div className='flex flex-col gap-8'>
         <header className='flex items-center justify-between'>
           <Text variant='h2'>Description</Text>
-          <Button href={project.url}>Visit</Button>
+          <Button href={project.url} target='_blank'>
+            Visit
+          </Button>
         </header>
         <Text>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi

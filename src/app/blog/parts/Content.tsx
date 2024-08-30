@@ -44,7 +44,7 @@ export const BlogContent = ({ posts }: BlogContentProps) => {
             })}
           </section>
         ) : (
-          <p>Nothing to see here yet</p>
+          <p>Don't worry, something will be here very soon</p>
         )}
       </div>
     </section>

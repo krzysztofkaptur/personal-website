@@ -46,7 +46,7 @@ export default function RootLayout({
           </div>
         </TransitionProvider>
         <footer className='border-t-2 border-solid border-gray-900 bg-gradient-to-b from-gray-800 to-gray-900'>
-          <div className='mx-auto max-w-7xl p-4'>
+          <div className='mx-auto max-w-6xl p-4'>
             <span>&copy; {new Date().getFullYear()}</span>
           </div>
         </footer>

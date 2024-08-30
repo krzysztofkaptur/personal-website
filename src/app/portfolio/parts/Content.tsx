@@ -41,7 +41,7 @@ export const PortfolioContent = () => {
                 src={project.image}
                 alt={project.project}
                 width={800}
-                height={200}
+                height={400}
               />
             </figure>
             <div className='absolute text-center'>

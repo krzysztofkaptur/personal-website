@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { PropsWithChildren } from 'react'
+import { HTMLAttributeAnchorTarget, PropsWithChildren } from 'react'
 
 import { ArrowRight } from '@/lib/icons'
 
@@ -12,6 +12,7 @@ type ButtonPropsType = PropsWithChildren<
   ButtonProps & {
     isLoading?: boolean
     href?: string
+    target?: HTMLAttributeAnchorTarget
   }
 >
 
@@ -20,12 +21,13 @@ export const Button = ({
   children,
   type = 'button',
   href,
+  target,
   ...props
 }: ButtonPropsType) => {
   return (
     <>
       {href ? (
-        <Link href={href}>
+        <Link href={href} target={target}>
           <ButtonContent
             isLoading={isLoading}
             type={type}

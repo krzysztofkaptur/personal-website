@@ -8,13 +8,13 @@ export const AboutBiography = () => {
           About me
         </Text>
       </header>
-      <Text className='text-lg leading-relaxed sm:text-2xl md:text-4xl'>
+      <Text className='text-lg sm:text-2xl md:text-4xl md:leading-[3.5rem]'>
         Throughout my{' '}
         {new Date().getFullYear() - new Date('2017-08-17').getFullYear()} year
         Front-end journey I've worked with many different technologies, not
         shying away from new challenges and a chance to learn new things.
       </Text>
-      <Text className='text-lg leading-relaxed sm:text-2xl md:text-4xl'>
+      <Text className='text-lg sm:text-2xl md:text-4xl md:leading-[3.5rem]'>
         Feel free to reach out - I'm open for new, exciting opportunities!
       </Text>
     </section>

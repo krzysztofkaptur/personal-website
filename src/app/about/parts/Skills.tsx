@@ -28,15 +28,18 @@ const additionalSkills = [
   'Cypress',
   'Wordpress',
   'SCSS',
+  'Storybook',
   'Bootstrap',
   'jQuery',
   'Magento',
   'Vue test utils',
+  'SQL',
+  'NodeJS',
 ]
 
 export const AboutSkills = () => {
   return (
-    <section className='flex min-h-screen flex-col justify-center gap-6 py-10'>
+    <section className='flex min-h-screen flex-col justify-center gap-6 pt-10'>
       <header>
         <Text variant='h2' className='uppercase text-primary'>
           <motion.span

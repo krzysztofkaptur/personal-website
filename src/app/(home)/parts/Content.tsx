@@ -31,10 +31,10 @@ export const HomeContent = () => {
         modern technologies.
       </Text>
       <div className='flex gap-4'>
-        <Button href='/portfolio'>View my work</Button>
-        <Button href='/contact' variant='outline'>
-          Contact me
+        <Button href='/portfolio' variant='outline'>
+          View my work
         </Button>
+        <Button href='/contact'>Contact me</Button>
       </div>
     </div>
   )

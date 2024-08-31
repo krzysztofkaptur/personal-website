@@ -58,6 +58,7 @@ export const projects: Projects = {
       'HTML',
       'CSS',
       'Nuxt',
+      'Vuex',
       'Jest',
       'Vue testing library',
       'Cypress',

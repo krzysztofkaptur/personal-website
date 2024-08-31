@@ -22,6 +22,9 @@ const skills = [
 ]
 
 const additionalSkills = [
+  'Pinia',
+  'Vuex',
+  'Zustand',
   'Jest',
   'Docker',
   'AWS',

@@ -1,0 +1,34 @@
+---
+title: (Project) Make prototyping easier with fake API
+description: Fake JSON API for prototyping
+date: 2024-09-15
+tags: ['Project', 'ExpressJS', 'API', 'SQLite', 'Drizzle', 'Linode', 'Tailwind']
+published: true
+author: Krzysztof Kaptur
+---
+
+As I'm unemployed now and have a lot of free time so I decided to build a shit ton of projects and publish them online, plus write about it here.
+
+Here's the first one. Simple fake JSON API inspired by <a href="https://fakestoreapi.com" target="_blank" className="text-primary">Fake store API</a>.
+
+"Very fancy" stack - ExpressJS, Drizzle/SQLite, Linode.
+Front-end is written in EJS and to be honest, it sucks. I'm used to React/Vue and getting back into html world is not pleasant. For this project it's enough but I can imagine working like that in some big codebase would be pain in the ass. But there's also a positive. If you want something quick and don't need to pass data around that much then it's much simpler to build/deploy than going with separate front-end app.
+
+The current state is just the beginning. I need to prioritize adding new endpoints with more data. Things like 'users' and 'testimonials' are gonna be deployed soon.
+
+After that I'll need to take care of codebase quality. Add tests, Docker and for sure AUTOMATION. Right now it's hosted on Linode and to update it I need to go the server, pull the changes from repo and estart the pm2. So adding Github Actions is high on my todo list.
+
+Feel free to use it <a href="https://cyrus-api.com" target='_blank' className="text-primary">here</a>, or clone it and use locally. Do whatever and have fun. Cya
+
+Links:
+
+<a href='https://cyrus-api.com/docs' target='_blank' className='text-primary'>
+  Cyrus API docs
+</a>
+<a
+  href='https://github.com/krzysztofkaptur/cyrus-api'
+  target='_blank'
+  className='text-primary'
+>
+  Github Repo
+</a>

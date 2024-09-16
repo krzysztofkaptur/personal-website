@@ -19,10 +19,10 @@ const links = [
     url: '/portfolio',
     label: 'Portfolio',
   },
-  // {
-  //   url: '/side-projects',
-  //   label: 'Side projects',
-  // },
+  {
+    url: '/side-projects',
+    label: 'Side projects',
+  },
   {
     url: '/blog',
     label: 'Blog',

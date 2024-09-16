@@ -1,0 +1,1 @@
+export { SideProjectsContent } from './Content'

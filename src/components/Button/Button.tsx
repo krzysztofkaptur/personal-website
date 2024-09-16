@@ -27,7 +27,10 @@ export const Button = ({
   return (
     <>
       {href ? (
-        <Link href={href} target={target}>
+        <Link
+          href={href}
+          target={target ?? href.includes('http') ? '_blank' : '_self'}
+        >
           <ButtonContent
             isLoading={isLoading}
             type={type}

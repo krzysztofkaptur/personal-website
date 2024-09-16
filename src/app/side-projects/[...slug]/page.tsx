@@ -1,6 +1,6 @@
 import { BackButton } from '@/components'
 
-import { projects } from '@/data/projects'
+import { sideProjects } from '@/data/projects'
 
 import { SideProjectContent } from './parts'
 
@@ -11,11 +11,11 @@ type SideProjectProps = {
 }
 
 export async function generateMetadata({ params: { slug } }: SideProjectProps) {
-  if (!projects[slug]?.project)
+  if (!sideProjects[slug]?.project)
     return { title: `404 | ${process.env.WEBSITE_NAME}` }
 
   return {
-    title: `${projects[slug]?.project} | ${process.env.WEBSITE_NAME}`,
+    title: `${sideProjects[slug]?.project} | ${process.env.WEBSITE_NAME}`,
   }
 }
 

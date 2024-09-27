@@ -20,18 +20,25 @@ export const BlogContent = ({ posts }: BlogContentProps) => {
           <Text>My thoughts on tech</Text>
         </header>
         {posts?.length > 0 ? (
-          <section className='flex flex-col gap-8'>
+          <section className='flex flex-col gap-12'>
             {posts.map((post) => {
-              const { slug, title, description, tags, date } = post
+              const { slug, title, description, tags, date, category } = post
               return (
                 <article key={slug} className='flex flex-1 flex-col gap-2'>
-                  <header>
+                  <header className='flex flex-col gap-2'>
                     <Text variant='h4'>
                       <Link href={slug}>{title}</Link>
                     </Text>
-                    <span className='text-xs text-muted-foreground'>
-                      {formatDate(date)}
-                    </span>
+                    <div className='flex items-center gap-4'>
+                      {category ? (
+                        <Badge text={`#${category}`} variant='outline' />
+                      ) : null}
+                      {date ? (
+                        <span className='text-xs text-muted-foreground'>
+                          {formatDate(date)}
+                        </span>
+                      ) : null}
+                    </div>
                   </header>
                   <Text>{description}</Text>
                   <footer className='flex flex-wrap gap-2'>

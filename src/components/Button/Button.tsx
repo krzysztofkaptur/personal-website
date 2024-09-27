@@ -58,6 +58,13 @@ const ButtonContent = ({
   ...props
 }: ButtonPropsType): JSX.Element => (
   <ButtonUI type={type} disabled={isLoading || disabled} {...props}>
-    {!isLoading ? children : <Spinner />}
+    {isLoading ? (
+      <div className='flex items-center gap-2'>
+        <Spinner />
+        {children}
+      </div>
+    ) : (
+      children
+    )}
   </ButtonUI>
 )
